@@ -1,5 +1,5 @@
 Info: Starting: Create block symbol file (.bsf)
-Info: qsys-generate C:\cygwin\home\local\challenge\baseline\hardware\baseline_qsys.qsys --block-symbol-file --output-directory=C:\cygwin\home\local\challenge\baseline\hardware\baseline_qsys --family="Cyclone V" --part=5CSEMA5F31C6
+Info: qsys-generate C:\cygwin\home\local\challenge-ece4530-f17-0\baseline\hardware\baseline_qsys.qsys --block-symbol-file --output-directory=C:\cygwin\home\local\challenge-ece4530-f17-0\baseline\hardware\baseline_qsys --family="Cyclone V" --part=5CSEMA5F31C6
 Progress: Loading hardware/baseline_qsys.qsys
 Progress: Reading input file
 Progress: Adding clk_0 [clock_source 17.0]
@@ -26,7 +26,7 @@ Info: qsys-generate succeeded.
 Info: Finished: Create block symbol file (.bsf)
 Info: 
 Info: Starting: Create HDL design files for synthesis
-Info: qsys-generate C:\cygwin\home\local\challenge\baseline\hardware\baseline_qsys.qsys --synthesis=VERILOG --output-directory=C:\cygwin\home\local\challenge\baseline\hardware\baseline_qsys\synthesis --family="Cyclone V" --part=5CSEMA5F31C6
+Info: qsys-generate C:\cygwin\home\local\challenge-ece4530-f17-0\baseline\hardware\baseline_qsys.qsys --synthesis=VERILOG --output-directory=C:\cygwin\home\local\challenge-ece4530-f17-0\baseline\hardware\baseline_qsys\synthesis --family="Cyclone V" --part=5CSEMA5F31C6
 Progress: Loading hardware/baseline_qsys.qsys
 Progress: Reading input file
 Progress: Adding clk_0 [clock_source 17.0]
@@ -59,15 +59,15 @@ Warning: hps_0: "QSPI clock frequency" (desired_qspi_clk_mhz) requested 400.0 MH
 Warning: hps_0: 1 or more output clock frequencies cannot be achieved precisely, consider revising desired output clock frequencies.
 Info: hps_0: "baseline_qsys" instantiated altera_hps "hps_0"
 Info: led_pio_0: Starting RTL generation for module 'baseline_qsys_led_pio_0'
-Info: led_pio_0:   Generation command is [exec C:/intelfpga_lite/17.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.0/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.0/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.0/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=baseline_qsys_led_pio_0 --dir=C:/Users/PATRIC~1/AppData/Local/Temp/alt7479_7788559264152978561.dir/0002_led_pio_0_gen/ --quartus_dir=C:/intelfpga_lite/17.0/quartus --verilog --config=C:/Users/PATRIC~1/AppData/Local/Temp/alt7479_7788559264152978561.dir/0002_led_pio_0_gen//baseline_qsys_led_pio_0_component_configuration.pl  --do_build_sim=0  ]
+Info: led_pio_0:   Generation command is [exec C:/intelfpga_lite/17.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.0/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.0/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.0/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=baseline_qsys_led_pio_0 --dir=C:/Users/PATRIC~1/AppData/Local/Temp/alt7499_2739241693334246306.dir/0002_led_pio_0_gen/ --quartus_dir=C:/intelfpga_lite/17.0/quartus --verilog --config=C:/Users/PATRIC~1/AppData/Local/Temp/alt7499_2739241693334246306.dir/0002_led_pio_0_gen//baseline_qsys_led_pio_0_component_configuration.pl  --do_build_sim=0  ]
 Info: led_pio_0: Done RTL generation for module 'baseline_qsys_led_pio_0'
 Info: led_pio_0: "baseline_qsys" instantiated altera_avalon_pio "led_pio_0"
 Info: onchip_memory2_0: Starting RTL generation for module 'baseline_qsys_onchip_memory2_0'
-Info: onchip_memory2_0:   Generation command is [exec C:/intelfpga_lite/17.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.0/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.0/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.0/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=baseline_qsys_onchip_memory2_0 --dir=C:/Users/PATRIC~1/AppData/Local/Temp/alt7479_7788559264152978561.dir/0003_onchip_memory2_0_gen/ --quartus_dir=C:/intelfpga_lite/17.0/quartus --verilog --config=C:/Users/PATRIC~1/AppData/Local/Temp/alt7479_7788559264152978561.dir/0003_onchip_memory2_0_gen//baseline_qsys_onchip_memory2_0_component_configuration.pl  --do_build_sim=0  ]
+Info: onchip_memory2_0:   Generation command is [exec C:/intelfpga_lite/17.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.0/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.0/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.0/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=baseline_qsys_onchip_memory2_0 --dir=C:/Users/PATRIC~1/AppData/Local/Temp/alt7499_2739241693334246306.dir/0003_onchip_memory2_0_gen/ --quartus_dir=C:/intelfpga_lite/17.0/quartus --verilog --config=C:/Users/PATRIC~1/AppData/Local/Temp/alt7499_2739241693334246306.dir/0003_onchip_memory2_0_gen//baseline_qsys_onchip_memory2_0_component_configuration.pl  --do_build_sim=0  ]
 Info: onchip_memory2_0: Done RTL generation for module 'baseline_qsys_onchip_memory2_0'
 Info: onchip_memory2_0: "baseline_qsys" instantiated altera_avalon_onchip_memory2 "onchip_memory2_0"
 Info: switch_pio_1: Starting RTL generation for module 'baseline_qsys_switch_pio_1'
-Info: switch_pio_1:   Generation command is [exec C:/intelfpga_lite/17.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.0/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.0/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.0/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=baseline_qsys_switch_pio_1 --dir=C:/Users/PATRIC~1/AppData/Local/Temp/alt7479_7788559264152978561.dir/0004_switch_pio_1_gen/ --quartus_dir=C:/intelfpga_lite/17.0/quartus --verilog --config=C:/Users/PATRIC~1/AppData/Local/Temp/alt7479_7788559264152978561.dir/0004_switch_pio_1_gen//baseline_qsys_switch_pio_1_component_configuration.pl  --do_build_sim=0  ]
+Info: switch_pio_1:   Generation command is [exec C:/intelfpga_lite/17.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.0/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.0/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.0/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=baseline_qsys_switch_pio_1 --dir=C:/Users/PATRIC~1/AppData/Local/Temp/alt7499_2739241693334246306.dir/0004_switch_pio_1_gen/ --quartus_dir=C:/intelfpga_lite/17.0/quartus --verilog --config=C:/Users/PATRIC~1/AppData/Local/Temp/alt7499_2739241693334246306.dir/0004_switch_pio_1_gen//baseline_qsys_switch_pio_1_component_configuration.pl  --do_build_sim=0  ]
 Info: switch_pio_1: Done RTL generation for module 'baseline_qsys_switch_pio_1'
 Info: switch_pio_1: "baseline_qsys" instantiated altera_avalon_pio "switch_pio_1"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
@@ -85,27 +85,27 @@ Info: onchip_memory2_0_s1_agent_rsp_fifo: "mm_interconnect_0" instantiated alter
 Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
 Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
 Info: onchip_memory2_0_s1_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "onchip_memory2_0_s1_burst_adapter"
-Info: Reusing file C:/cygwin/home/local/challenge/baseline/hardware/baseline_qsys/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file C:/cygwin/home/local/challenge-ece4530-f17-0/baseline/hardware/baseline_qsys/synthesis/submodules/altera_merlin_address_alignment.sv
 Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
 Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file C:/cygwin/home/local/challenge/baseline/hardware/baseline_qsys/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file C:/cygwin/home/local/challenge-ece4530-f17-0/baseline/hardware/baseline_qsys/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: onchip_memory2_0_s1_rsp_width_adapter: "mm_interconnect_0" instantiated altera_merlin_width_adapter "onchip_memory2_0_s1_rsp_width_adapter"
-Info: Reusing file C:/cygwin/home/local/challenge/baseline/hardware/baseline_qsys/synthesis/submodules/altera_merlin_address_alignment.sv
-Info: Reusing file C:/cygwin/home/local/challenge/baseline/hardware/baseline_qsys/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+Info: Reusing file C:/cygwin/home/local/challenge-ece4530-f17-0/baseline/hardware/baseline_qsys/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file C:/cygwin/home/local/challenge-ece4530-f17-0/baseline/hardware/baseline_qsys/synthesis/submodules/altera_merlin_burst_uncompressor.sv
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: router: "mm_interconnect_1" instantiated altera_merlin_router "router"
 Info: router_002: "mm_interconnect_1" instantiated altera_merlin_router "router_002"
 Info: hps_0_h2f_lw_axi_master_wr_limiter: "mm_interconnect_1" instantiated altera_merlin_traffic_limiter "hps_0_h2f_lw_axi_master_wr_limiter"
-Info: Reusing file C:/cygwin/home/local/challenge/baseline/hardware/baseline_qsys/synthesis/submodules/altera_avalon_sc_fifo.v
-Info: Reusing file C:/cygwin/home/local/challenge/baseline/hardware/baseline_qsys/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: Reusing file C:/cygwin/home/local/challenge-ece4530-f17-0/baseline/hardware/baseline_qsys/synthesis/submodules/altera_avalon_sc_fifo.v
+Info: Reusing file C:/cygwin/home/local/challenge-ece4530-f17-0/baseline/hardware/baseline_qsys/synthesis/submodules/altera_avalon_st_pipeline_base.v
 Info: cmd_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "cmd_mux"
-Info: Reusing file C:/cygwin/home/local/challenge/baseline/hardware/baseline_qsys/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file C:/cygwin/home/local/challenge-ece4530-f17-0/baseline/hardware/baseline_qsys/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file C:/cygwin/home/local/challenge/baseline/hardware/baseline_qsys/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file C:/cygwin/home/local/challenge-ece4530-f17-0/baseline/hardware/baseline_qsys/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: avalon_st_adapter: "mm_interconnect_1" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: border: "hps_io" instantiated altera_interface_generator "border"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"

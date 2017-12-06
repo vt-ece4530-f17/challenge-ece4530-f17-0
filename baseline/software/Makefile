@@ -14,7 +14,7 @@ CROSS_OBJDUMP= $(CROSS_COMPILE)objdump
 CROSS_SIZE= $(CROSS_COMPILE)size
 FUNC_CC = gcc -lm -DNODE1SOC
 
-build: $(TARGET)
+build: $(TARGET) timerdemo
 
 $(TARGET): correlate.c
 	$(CROSS_CC) $(CROSS_CFLAGS) $(CROSS_LDFLAGS) $^ -o $@
@@ -22,10 +22,13 @@ $(TARGET): correlate.c
 	$(CROSS_SIZE) $(TARGET)
 	$(FUNC_CC) $^ -o $(TARGET)_x86
 
+timerdemo: timerdemo.c
+	$(CROSS_CC) $(CROSS_CFLAGS) $(CROSS_LDFLAGS) $^ -o $@
+
 %.o : %.c
 	$(CROSS_CC) $(CROSS_CFLAGS) -c $< -o $@
 
 .PHONY: clean
 
 clean:
-	rm -f $(TARGET) $(TARGET)_x86 $(TARGET).lst wave*.txt *.a *.o *~
+	rm -f $(TARGET) $(TARGET)_x86 $(TARGET).lst wave*.txt timerdemo *.a *.o *~

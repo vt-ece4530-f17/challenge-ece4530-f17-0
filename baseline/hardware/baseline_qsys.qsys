@@ -37,7 +37,7 @@
    {
       datum baseAddress
       {
-         value = "16";
+         value = "80";
          type = "String";
       }
    }
@@ -66,6 +66,22 @@
       }
    }
    element switch_pio_1.s1
+   {
+      datum baseAddress
+      {
+         value = "64";
+         type = "String";
+      }
+   }
+   element timer_0
+   {
+      datum _sortIndex
+      {
+         value = "5";
+         type = "int";
+      }
+   }
+   element timer_0.s1
    {
       datum baseAddress
       {
@@ -708,6 +724,18 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="10" />
  </module>
+ <module name="timer_0" kind="altera_avalon_timer" version="17.0" enabled="1">
+  <parameter name="alwaysRun" value="false" />
+  <parameter name="counterSize" value="64" />
+  <parameter name="fixedPeriod" value="false" />
+  <parameter name="period" value="0x7FFFFFFFFFFFFFFF" />
+  <parameter name="periodUnits" value="CLOCKS" />
+  <parameter name="resetOutput" value="false" />
+  <parameter name="snapshot" value="true" />
+  <parameter name="systemFrequency" value="50000000" />
+  <parameter name="timeoutPulseOutput" value="false" />
+  <parameter name="watchdogPulse" value="2" />
+ </module>
  <connection
    kind="avalon"
    version="17.0"
@@ -723,7 +751,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="led_pio_0.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0010" />
+  <parameter name="baseAddress" value="0x0050" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -732,11 +760,21 @@
    start="hps_0.h2f_lw_axi_master"
    end="switch_pio_1.s1">
   <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0040" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.0"
+   start="hps_0.h2f_lw_axi_master"
+   end="timer_0.s1">
+  <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="clock" version="17.0" start="clk_0.clk" end="led_pio_0.clk" />
  <connection kind="clock" version="17.0" start="clk_0.clk" end="switch_pio_1.clk" />
+ <connection kind="clock" version="17.0" start="clk_0.clk" end="timer_0.clk" />
  <connection
    kind="clock"
    version="17.0"
@@ -762,6 +800,11 @@
    version="17.0"
    start="clk_0.clk_reset"
    end="switch_pio_1.reset" />
+ <connection
+   kind="reset"
+   version="17.0"
+   start="clk_0.clk_reset"
+   end="timer_0.reset" />
  <connection
    kind="reset"
    version="17.0"

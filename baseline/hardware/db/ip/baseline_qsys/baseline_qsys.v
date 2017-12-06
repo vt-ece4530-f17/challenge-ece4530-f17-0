@@ -159,7 +159,12 @@ module baseline_qsys (
 	wire  [31:0] mm_interconnect_1_led_pio_0_s1_writedata;         // mm_interconnect_1:led_pio_0_s1_writedata -> led_pio_0:writedata
 	wire  [31:0] mm_interconnect_1_switch_pio_1_s1_readdata;       // switch_pio_1:readdata -> mm_interconnect_1:switch_pio_1_s1_readdata
 	wire   [1:0] mm_interconnect_1_switch_pio_1_s1_address;        // mm_interconnect_1:switch_pio_1_s1_address -> switch_pio_1:address
-	wire         rst_controller_reset_out_reset;                   // rst_controller:reset_out -> [led_pio_0:reset_n, mm_interconnect_0:onchip_memory2_0_reset1_reset_bridge_in_reset_reset, mm_interconnect_1:led_pio_0_reset_reset_bridge_in_reset_reset, onchip_memory2_0:reset, rst_translator:in_reset, switch_pio_1:reset_n]
+	wire         mm_interconnect_1_timer_0_s1_chipselect;          // mm_interconnect_1:timer_0_s1_chipselect -> timer_0:chipselect
+	wire  [15:0] mm_interconnect_1_timer_0_s1_readdata;            // timer_0:readdata -> mm_interconnect_1:timer_0_s1_readdata
+	wire   [3:0] mm_interconnect_1_timer_0_s1_address;             // mm_interconnect_1:timer_0_s1_address -> timer_0:address
+	wire         mm_interconnect_1_timer_0_s1_write;               // mm_interconnect_1:timer_0_s1_write -> timer_0:write_n
+	wire  [15:0] mm_interconnect_1_timer_0_s1_writedata;           // mm_interconnect_1:timer_0_s1_writedata -> timer_0:writedata
+	wire         rst_controller_reset_out_reset;                   // rst_controller:reset_out -> [led_pio_0:reset_n, mm_interconnect_0:onchip_memory2_0_reset1_reset_bridge_in_reset_reset, mm_interconnect_1:led_pio_0_reset_reset_bridge_in_reset_reset, onchip_memory2_0:reset, rst_translator:in_reset, switch_pio_1:reset_n, timer_0:reset_n]
 	wire         rst_controller_reset_out_reset_req;               // rst_controller:reset_req -> [onchip_memory2_0:reset_req, rst_translator:reset_req_in]
 	wire         rst_controller_001_reset_out_reset;               // rst_controller_001:reset_out -> [mm_interconnect_0:hps_0_h2f_axi_master_agent_clk_reset_reset_bridge_in_reset_reset, mm_interconnect_1:hps_0_h2f_lw_axi_master_agent_clk_reset_reset_bridge_in_reset_reset]
 	wire         hps_0_h2f_reset_reset;                            // hps_0:h2f_rst_n -> rst_controller_001:reset_in0
@@ -341,6 +346,17 @@ module baseline_qsys (
 		.in_port  (switch_pio_port_export)                      // external_connection.export
 	);
 
+	baseline_qsys_timer_0 timer_0 (
+		.clk        (clk_clk),                                 //   clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),         // reset.reset_n
+		.address    (mm_interconnect_1_timer_0_s1_address),    //    s1.address
+		.writedata  (mm_interconnect_1_timer_0_s1_writedata),  //      .writedata
+		.readdata   (mm_interconnect_1_timer_0_s1_readdata),   //      .readdata
+		.chipselect (mm_interconnect_1_timer_0_s1_chipselect), //      .chipselect
+		.write_n    (~mm_interconnect_1_timer_0_s1_write),     //      .write_n
+		.irq        ()                                         //   irq.irq
+	);
+
 	baseline_qsys_mm_interconnect_0 mm_interconnect_0 (
 		.hps_0_h2f_axi_master_awid                                        (hps_0_h2f_axi_master_awid),                        //                                       hps_0_h2f_axi_master.awid
 		.hps_0_h2f_axi_master_awaddr                                      (hps_0_h2f_axi_master_awaddr),                      //                                                           .awaddr
@@ -435,7 +451,12 @@ module baseline_qsys (
 		.led_pio_0_s1_writedata                                              (mm_interconnect_1_led_pio_0_s1_writedata),   //                                                              .writedata
 		.led_pio_0_s1_chipselect                                             (mm_interconnect_1_led_pio_0_s1_chipselect),  //                                                              .chipselect
 		.switch_pio_1_s1_address                                             (mm_interconnect_1_switch_pio_1_s1_address),  //                                               switch_pio_1_s1.address
-		.switch_pio_1_s1_readdata                                            (mm_interconnect_1_switch_pio_1_s1_readdata)  //                                                              .readdata
+		.switch_pio_1_s1_readdata                                            (mm_interconnect_1_switch_pio_1_s1_readdata), //                                                              .readdata
+		.timer_0_s1_address                                                  (mm_interconnect_1_timer_0_s1_address),       //                                                    timer_0_s1.address
+		.timer_0_s1_write                                                    (mm_interconnect_1_timer_0_s1_write),         //                                                              .write
+		.timer_0_s1_readdata                                                 (mm_interconnect_1_timer_0_s1_readdata),      //                                                              .readdata
+		.timer_0_s1_writedata                                                (mm_interconnect_1_timer_0_s1_writedata),     //                                                              .writedata
+		.timer_0_s1_chipselect                                               (mm_interconnect_1_timer_0_s1_chipselect)     //                                                              .chipselect
 	);
 
 	altera_reset_controller #(

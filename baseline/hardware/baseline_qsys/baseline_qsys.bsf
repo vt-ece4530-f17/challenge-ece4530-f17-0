@@ -575,7 +575,7 @@ agreement for further details.
 		(text "reset_n" (rect 197 939 436 1888)(font "Arial" (color 0 0 0)))
 		(text "switch_pio_port" (rect 100 955 290 1923)(font "Arial" (color 128 0 0)(font_size 9)))
 		(text "export" (rect 197 979 430 1968)(font "Arial" (color 0 0 0)))
-		(text " baseline_qsys " (rect 528 1000 1146 2010)(font "Arial" ))
+		(text " system " (rect 557 1000 1162 2010)(font "Arial" ))
 		(line (pt 192 32)(pt 400 32)(line_width 1))
 		(line (pt 400 32)(pt 400 1000)(line_width 1))
 		(line (pt 192 1000)(pt 400 1000)(line_width 1))
